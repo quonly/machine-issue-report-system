@@ -15,6 +15,8 @@ class MachineAPIView(generics.ListCreateAPIView):
 
 class ReportFilter(filters.FilterSet):
   '''
+  Example query parameter
+
   ?machine_id=123&title=Overheating&start_timestamp=2023-08-01&end_timestamp=2023-12-26&status=Closed
   '''
   title = filters.CharFilter(field_name='issue', lookup_expr='icontains')

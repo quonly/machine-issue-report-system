@@ -40,6 +40,7 @@ class History(models.Model):
   comment = models.TextField(blank=True, null=True)
 
   def save(self, *args, **kwargs):
+    # override save method for updating Report model status when History model have change
     report = self.report_id
     report.status = self.status
     report.save()
